@@ -1,0 +1,4 @@
+PngImage_1 RCDATA "..\\SplashScreen.png"
+PngImage_2 RCDATA "..\\StoreLogo.png"
+PngImage_3 RCDATA "..\\Logo.png"
+PngImage_4 RCDATA "..\\SmallLogo.png"

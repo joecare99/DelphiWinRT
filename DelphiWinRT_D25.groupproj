@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F880D9D1-0C98-46D5-8AE5-82B78FED21D5}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="D25\SampleWinRT.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SampleWinRT">
+        <MSBuild Projects="D25\SampleWinRT.dproj"/>
+    </Target>
+    <Target Name="SampleWinRT:Clean">
+        <MSBuild Projects="D25\SampleWinRT.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SampleWinRT:Make">
+        <MSBuild Projects="D25\SampleWinRT.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SampleWinRT"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SampleWinRT:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SampleWinRT:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
